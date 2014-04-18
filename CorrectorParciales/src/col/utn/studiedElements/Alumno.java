@@ -10,4 +10,8 @@ public class Alumno {
 	public void contestarPregunta(Object respuesta, Integer idPregunta) {
 		parcial.responderPregunta(idPregunta, respuesta);
 	}
+
+	public double notaFinal() {
+		return parcial.calificacionParcial();
+	}
 }

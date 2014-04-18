@@ -24,7 +24,7 @@ public class Parcial {
 		return criterioCorreccion.notaFinal(notaAcumulativaParcial());
 	}
 
-	public double sumarPuntos(List<Pregunta> pregs) {
+	private double sumarPuntos(List<Pregunta> pregs) {
 		return pregs.stream().mapToDouble(p -> p.pesoEspecifico).max()
 				.getAsDouble();
 	}
@@ -33,11 +33,11 @@ public class Parcial {
 		return sumarPuntos(preguntas);
 	}
 
-	public double notaAcumulativaParcial() {
+	private double notaAcumulativaParcial() {
 		return sumarPuntos(preguntasCorrectas());
 	}
 
-	public List<Pregunta> preguntasCorrectas() {
+	private List<Pregunta> preguntasCorrectas() {
 		List<Pregunta> preguntasCorrectas = new ArrayList<Pregunta>();
 		for (int i = 0; i < preguntas.size(); i++) {
 			Pregunta preg = preguntas.get(i);
